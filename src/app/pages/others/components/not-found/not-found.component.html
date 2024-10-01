@@ -1,1 +1,25 @@
-<p>not-found works!</p>
+<div
+  class="flex flex-col bg-white w-[24.375rem] p-5 gap-[2.1rem] m-auto sm:w-full"
+>
+  <div class="flex flex-col items-center">
+    <img
+      class="sm:w-[36.938rem] sm:h-[26.25rem] w-[22rem] h-[17rem]"
+      src="/assets/images/png/404.png"
+      alt="Imagen 404"
+    />
+  </div>
+
+  <span class="text-[#565872] font-semibold text-sm flex justify-center"
+    >OPPS! PAGE NOT FOUND</span
+  >
+
+  <div class="flex flex-col items-center">
+    <button
+      [routerLink]="['']"
+      class="bg-color-primary hover:bg-color-neutralThree shadow-md text-white rounded-3xl h-10 w-[11.875rem] flex items-center justify-center cursor-pointer"
+      type="button"
+    >
+      BACK TO HOME
+    </button>
+  </div>
+</div>
