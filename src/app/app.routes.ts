@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { SignInComponent } from './pages/auth/components/sign-in/sign-in.component';
-import { SignUpComponent } from './pages/auth/components/sign-up/sign-up.component';
+import { AuthLayoutComponent } from '../global/components/layouts/auth-layout-component/auth-layout.component';
+import { NotFoundComponent } from '@pages/others/components/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -9,11 +9,20 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'sign-in',
-    component: SignInComponent,
+    path: '',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('@pages/auth/auth.routes').then(
+            (authRoutes) => authRoutes.authRoutes
+          ),
+      },
+    ],
   },
   {
-    path: 'sign-up',
-    component: SignUpComponent,
+    path: '**',
+    component: NotFoundComponent,
   },
 ];

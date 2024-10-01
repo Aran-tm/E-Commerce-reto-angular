@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -20,9 +21,9 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@pages/*": ["/src/app/pages/*"],
-      "@assets/*": ["/src/assets/*"],
-      "@global/*": ["/src/global/*"]
+      "@pages/*": ["src/app/pages/*"],
+      "@assets/*": ["src/app/assets/*"],
+      "@global/*": ["src/app/global/*"]
     }
   },
   "angularCompilerOptions": {
