@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-new-arrivals-title',
+  selector: 'app-prices-banner',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './new-arrivals-title.component.html',
-  styles: ``,
+  templateUrl: './banner-prices.component.html',
 })
-export class NewArrivalsTitleComponent {}
+export class BannerPricesComponent {}
