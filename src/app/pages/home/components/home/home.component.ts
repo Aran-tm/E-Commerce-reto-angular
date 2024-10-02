@@ -5,6 +5,7 @@ import { CarrouselComponent } from '@global/components/carrousel/carrousel.compo
 import { BannerGridComponent } from '@global/components/banner-grid/banner-grid.component';
 import { NewArrivalsComponent } from '@global/components/new-arrivals/new-arrivals.component';
 import { ProductListComponent } from '@global/components/product-list/product-list.component';
+import { ValuesComponent } from "../../../../global/components/values/values.component";
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ import { ProductListComponent } from '@global/components/product-list/product-li
     BannerGridComponent,
     NewArrivalsComponent,
     ProductListComponent,
-  ],
+    ValuesComponent
+],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {}

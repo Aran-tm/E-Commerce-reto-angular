@@ -1,0 +1,33 @@
+/* Para Firefox */
+* {
+  scrollbar-width: thin; /* Puede ser 'auto', 'thin', o 'none' */
+  scrollbar-color: #888 #f1f1f1; /* Color del thumb y del track */
+}
+
+/* Estilo para el scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #a4a6b1;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #91939e;
+}
+
+/* Para navegadores MOZ */
+.custom-scrollbar{
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4);
+    scrollbar-track-color: rgba(255, 255, 255, 0.4);
+    scrollbar-gutter: 10px;
+    border: 1px solid transparent;
+}
