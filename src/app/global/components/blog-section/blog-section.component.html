@@ -1,4 +1,11 @@
-<div class="bg-white flex flex-row gap-10 px-40 py-20 justify-between">
+<div class="bg-white flex flex-col gap-10 px-40 py-20 justify-between">
   <!-- Sections title -->
   <app-sections-title class="w-full" [title]="title" [more]="more" />
+
+  <!-- Article List -->
+  <div class="max-w-[70.063rem] w-full gap-[1.563rem] flex flex-row">
+    @for (article of articleCards; track article.id) {
+    <app-article-card [article]="article" />
+    }
+  </div>
 </div>

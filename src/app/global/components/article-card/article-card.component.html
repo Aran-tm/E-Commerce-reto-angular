@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-6 rounded-2xl shadow-md">
+  <div
+    class="flex cursor-pointer hover:opacity-80 hover:transition-all hover:scale-105"
+  >
+    <img
+      [routerLink]="['/articles']"
+      class="rounded-2xl"
+      [src]="article()?.image"
+      [alt]="article()?.description"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2 p-5">
+    <span class="flex text-color-neutralThree font-semibold">{{
+      article()?.description
+    }}</span>
+    <div
+      [routerLink]="['/articles']"
+      class="flex flex-row items-center gap-2 cursor-pointer"
+    >
+      <span class="text-base font-semibold underline">{{
+        article()?.readMoreText
+      }}</span>
+
+      <button class="flex">
+        <div [innerHTML]="article()!.readMoreIcon | safe : 'html'"></div>
+      </button>
+    </div>
+  </div>
+</div>
