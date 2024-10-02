@@ -1,13 +1,47 @@
-<div class="flex max-w-[16.375rem] w-full">
-  <div class="max-h-[21.813rem] h-full w-[16.375rem] flex flex-col bg-white">
+<div class="flex flex-col max-w-[16.375rem] gap-6 w-full">
+  <div
+    class="h-full rounded-full hover:rounded-full w-[16.375rem] flex flex-col bg-white hover:transition-all shadow-md hover:scale-105 hover:h-[110%]"
+  >
     <div class="relative flex flex-col">
-      <span>{{ card()?.state }}</span>
+      <div
+        class="absolute top-0 left-0 right-0 pt-3 pl-5 text-center flex flex-col max-w-[4.188rem] w-full gap-2"
+      >
+        <span
+          class="py-1 flex justify-center font-semibold rounded px-[0.875rem] bg-white text-color-primary"
+          >{{ card()?.state }}</span
+        >
+        <span
+          class="py-1 flex justify-center font-semibold px-[0.875rem] rounded bg-color-green text-white"
+          >{{ card()?.discount }}</span
+        >
+      </div>
+
+      <!-- Add to WishList -->
+      <div
+        (click)="addedToWishList()"
+        [ngClass]="
+          itemAdded === true
+            ? 'absolute hover:cursor-pointer text-color-red top-0 right-0 pt-3 pl-5 text-center flex flex-col max-w-[4.188rem] w-full gap-2'
+            : 'absolute hover:cursor-pointer text-color-primary top-0 right-0 pt-3 pl-5 text-center flex flex-col max-w-[4.188rem] w-full gap-2'
+        "
+        [innerHtml]="heartItem | safe : 'html'"
+      ></div>
+
+      <!-- Product Image -->
       <img
-        class="bg-color-neutralSix rounded-3xl"
+        class="bg-color-neutralSix rounded-2xl hover:rounded-3xl"
         src="{{ card()?.image }}"
         alt="{{ card()?.name }}"
       />
     </div>
   </div>
-  <div class=""></div>
+
+  <div class="flex flex-col gap-3">
+    <div class="flex flex-col">
+      <div [innerHtml]="card()!.rating | safe : 'html'"></div>
+    </div>
+
+    <span class="text-sm">{{ card()!.name }}</span>
+    <span class="text-sm">{{ card()!.price | currency }}</span>
+  </div>
 </div>
