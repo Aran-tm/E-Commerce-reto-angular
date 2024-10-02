@@ -1,0 +1,8 @@
+<div
+  class="w-full flex gap-6 pl-40 mt-8 overflow-x-hidden overflow-y-hidden max-h-[21.813rem] h-full pb-[25rem]"
+>
+  <!-- Array items of product cards -->
+  @for (prod of productList; track prod.id) {
+  <app-product-card [card]="prod" />
+  }
+</div>

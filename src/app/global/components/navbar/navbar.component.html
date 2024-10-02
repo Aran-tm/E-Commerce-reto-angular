@@ -20,18 +20,18 @@
       </svg>
     </button>
 
-    <span class="text-color-primary text-lg font-medium">3legant. </span>
+    <span class="text-color-primary text-2xl font-medium">3legant. </span>
   </div>
 
   <!-- Center Part -->
-  <div class="flex flex-row gap-10 items-center justify-center pr-[4.375rem]">
+  <div class="flex flex-row gap-10 items-center justify-center">
     @for (nav of navRoutes; track nav.id) {
     <li
       [routerLink]="[nav.route]"
       [ngClass]="
         currentURL === nav.route
-          ? 'list-none cursor-pointer text-color-primary font-semibold hover:text-color-neutralThree hover:underline hover:transition-all'
-          : 'list-none cursor-pointer text-color-neutralThree font-semibold hover:text-color-neutralThree hover:underline hover:transition-all'
+          ? 'list-none cursor-pointer text-base text-color-primary font-semibold hover:text-color-neutralThree hover:underline hover:transition-all'
+          : 'list-none cursor-pointer text-base text-color-neutralThree font-semibold hover:text-color-neutralThree hover:underline hover:transition-all'
       "
     >
       {{ nav.name }}
