@@ -1,6 +1,6 @@
 <div
   [ngClass]="
-    hideOffer
+    hideOfferSignal()
       ? 'hidden'
       : 'py-2 flex gap-[1.375rem] w-full m-auto justify-between items-center bg-color-neutralSix'
   "
@@ -25,7 +25,7 @@
     </span>
   </div>
   <div class="flex items-center pr-5">
-    <button (click)="hideOfferFunction()">
+    <button (click)="hideOfferFunction()" appMessageDirective>
       <svg
         width="17"
         height="16"

@@ -1,18 +1,19 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MessageDirective } from '@global/directives/message.directive';
 
 @Component({
   selector: 'app-limited-offer',
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, MessageDirective],
   templateUrl: './limited-offer.component.html',
 })
 export class LimitedOfferComponent {
-  hideOffer: boolean = false;
+  hideOfferSignal = signal<boolean>(false);
 
   // hide offer function
   hideOfferFunction() {
-    this.hideOffer = true;
+    this.hideOfferSignal.set(true);
   }
 }
