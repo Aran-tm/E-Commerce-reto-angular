@@ -5,17 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class ShortDescriptionPipe implements PipeTransform {
-  transform(value: string, ...args: unknown[]): unknown {
+  // string value
+  transform(value?: string): unknown {
+    // know typeof value
     if (typeof value !== 'string') {
-      return value; // Retorna el valor original si no es un string
+      return value; // return original value if is'nt an string
     }
 
-    // Limita el texto a 15 caracteres
+    // max 15 characters
     const maxLength = 15;
     if (value.length > maxLength) {
-      return value.substring(0, maxLength) + '...'; // Agrega '...' si se corta el texto
+      return value.substring(0, maxLength) + '...'; // just for continuing text
     }
 
-    return value; // Retorna el texto original si no se corta
+    return value; // return original value if is'nt an string
   }
 }

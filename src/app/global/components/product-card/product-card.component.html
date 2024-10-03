@@ -20,7 +20,7 @@
       <div
         (click)="addedToWishList()"
         [ngClass]="
-          itemAdded === true
+          itemAdded() === true
             ? 'absolute hover:cursor-pointer text-color-red top-0 right-0 pt-3 pl-5 text-center flex flex-col max-w-[4.188rem] w-full gap-2'
             : 'absolute hover:cursor-pointer text-color-primary top-0 right-0 pt-3 pl-5 text-center flex flex-col max-w-[4.188rem] w-full gap-2'
         "
@@ -31,7 +31,7 @@
       <img
         class="bg-color-neutralSix h-full rounded-2xl hover:rounded-3xl"
         src="{{ card()?.image }}"
-        alt="{{ card()?.name}}"
+        alt="{{ card()?.name }}"
       />
 
       <div class="absolute bottom-0 right-0 left-0 flex flex-col p-7">
@@ -49,7 +49,7 @@
       <div [innerHtml]="card()!.rating | safe : 'html'"></div>
     </div>
 
-    <span class="text-sm">{{ card()!.name }}</span>
+    <span class="text-sm">{{ card()!.name | shortDescription }}</span>
     <span class="text-sm">{{ card()!.price | currency }}</span>
   </div>
 </div>

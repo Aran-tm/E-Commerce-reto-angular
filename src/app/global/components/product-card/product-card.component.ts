@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductCard } from '@global/models/product-card.interface';
+import { ShortDescriptionPipe } from '@global/pipes/short-description.pipe';
 import { SafePipe } from 'safe-pipe';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [RouterLink, CommonModule, SafePipe],
+  imports: [RouterLink, CommonModule, SafePipe, ShortDescriptionPipe],
   templateUrl: './product-card.component.html',
   styles: ``,
 })
 export class ProductCardComponent {
-  itemAdded: boolean = false;
+  itemAdded = signal<boolean>(false);
   heartItem = `<svg
                   width="48"
                   height="48"
@@ -75,7 +76,7 @@ export class ProductCardComponent {
   card = input<ProductCard>();
 
   addedToWishList() {
-    this.itemAdded = !this.itemAdded;
-    console.log(`Item adedd State: `, this.itemAdded);
+    this.itemAdded.set(!this.itemAdded());
+    console.log(`Item adedd State: `, this.itemAdded());
   }
 }
