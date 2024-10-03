@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-6 w-full h-full">
   <div
-    class="h-full rounded-full hover:rounded-full w-[16.375rem] flex flex-col bg-white hover:transition-all shadow-md hover:scale-105 hover:h-[110%]"
+    class="h-full rounded-3xl hover:rounded-3xl w-[16.375rem] flex flex-col bg-white hover:transition-all shadow-md hover:scale-105 hover:h-[110%]"
   >
     <div class="relative flex flex-col h-full">
       <div
@@ -33,6 +33,14 @@
         src="{{ card()?.image }}"
         alt="{{ card()?.name }}"
       />
+
+      <div class="absolute bottom-0 right-0 left-0 flex flex-col p-7">
+        <button
+          class="bg-color-primary rounded-lg py-2 px-6 gap-2 text-white hover:bg-color-neutralThree"
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
   </div>
 

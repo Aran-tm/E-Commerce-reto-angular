@@ -40,7 +40,7 @@
   </div>
 
   <!-- Right Part -->
-  <div [routerLink]="['/cart']" class="flex items-center justify-start gap-4">
+  <div class="flex items-center justify-start gap-4">
     <!-- Search -->
     <button class="cursor-pointer">
       <svg
@@ -61,7 +61,7 @@
     </button>
 
     <!-- Profile -->
-    <button class="cursor-pointer">
+    <button [routerLink]="['/profile']" class="cursor-pointer">
       <svg
         width="22"
         height="22"
@@ -79,7 +79,10 @@
     </button>
 
     <!-- Cart and Notifications Area -->
-    <button class="cursor-pointer gap-1 flex items-center">
+    <button
+      [routerLink]="['/cart']"
+      class="cursor-pointer gap-1 flex items-center"
+    >
       <svg
         width="24"
         height="24"

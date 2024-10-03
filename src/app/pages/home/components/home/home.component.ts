@@ -9,6 +9,7 @@ import { BannerPricesComponent } from '@global/components/banner-prices/prices-b
 import { BlogSectionComponent } from '@global/components/blog-section/blog-section.component';
 import { SectionsTitleComponent } from '@global/components/sections-title/sections-title.component';
 import { NewArrivalsComponent } from '@global/components/new-arrivals/new-arrivals.component';
+import { NewsletterComponent } from '@global/components/newsletter/newsletter.component';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,7 @@ import { NewArrivalsComponent } from '@global/components/new-arrivals/new-arriva
     BlogSectionComponent,
     SectionsTitleComponent,
     NewArrivalsComponent,
+    NewsletterComponent,
   ],
   templateUrl: './home.component.html',
 })
