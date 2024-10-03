@@ -1,10 +1,9 @@
 export interface ProductCard {
   id: number;
-  state: string;
-  discount: string;
+  title: string;
+  description: string;
+  category: string;
   image: string;
   rating: string;
-  name: string;
   price: number;
-  oldPrice: number;
 }

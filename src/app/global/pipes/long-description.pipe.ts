@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'shortDescription',
+  name: 'longDescription',
   standalone: true,
 })
-export class ShortDescriptionPipe implements PipeTransform {
+export class LongDescriptionPipe implements PipeTransform {
   // string value
   transform(value?: string): unknown {
     // know typeof value
@@ -13,7 +13,7 @@ export class ShortDescriptionPipe implements PipeTransform {
     }
 
     // max 15 characters
-    const maxLength = 25;
+    const maxLength = 100;
     if (value.length > maxLength) {
       return value.substring(0, maxLength) + '...'; // just for continuing text
     }
