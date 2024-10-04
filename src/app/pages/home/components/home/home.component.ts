@@ -10,7 +10,7 @@ import { BlogSectionComponent } from '@global/components/blog-section/blog-secti
 import { SectionsTitleComponent } from '@global/components/sections-title/sections-title.component';
 import { NewArrivalsComponent } from '@global/components/new-arrivals/new-arrivals.component';
 import { NewsletterComponent } from '@global/components/newsletter/newsletter.component';
-import { FooterComponent } from "../../../../global/components/footer/footer.component";
+import { FooterComponent } from "@global/components/footer/footer.component";
 
 @Component({
   selector: 'app-home',
@@ -27,7 +27,7 @@ import { FooterComponent } from "../../../../global/components/footer/footer.com
     SectionsTitleComponent,
     NewArrivalsComponent,
     NewsletterComponent,
-    FooterComponent
+    FooterComponent,
 ],
   templateUrl: './home.component.html',
 })

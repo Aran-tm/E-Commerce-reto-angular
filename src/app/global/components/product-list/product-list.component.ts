@@ -28,14 +28,14 @@ export class ProductListComponent {
   ngOnInit() {
     console.log(`URL Products: `, this.URL_PRODUCTS);
 
-    this.http.get<any>(this.URL_PRODUCTS).subscribe(
-      (data) => {
-        this.listProduct = data; // Asigna la data obtenida a la propiedad listProduct
-        console.log(`Productos From Fake API`, this.listProduct);
+    this.http.get<any>(this.URL_PRODUCTS).subscribe({
+      next: (data) => {
+        this.listProduct = data;
+        console.log('Datos recibidos:', data);
       },
-      (error) => {
-        console.error('Error catching datas', error); // Manejo de errores
-      }
-    );
+      error: (error) => {
+        console.error('Error en la solicitud:', error);
+      },
+    });
   }
 }
