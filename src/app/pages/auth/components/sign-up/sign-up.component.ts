@@ -39,8 +39,13 @@ export class SignUpComponent {
   //   checkbox: new FormControl(false),
   // });
 
+  ngOnInit() {
+    console.log(`Formulario es: `, this.formGroup.valid);
+  }
+
   onSubmit() {
     const submit = this.formGroup.value;
     console.log(`SUBMIT: `, submit);
+    console.log(`Formulario es: `, this.formGroup.valid);
   }
 }
