@@ -1,3 +1,4 @@
 export const environment = {
-  domain: 'https://fakestoreapi.com',
+  apiUrlBase: 'https://fakestoreapi.com',
+  production: true,
 };

@@ -1,1 +1,3 @@
-export const environment = {};
+export const environment = {
+  apiUrlBase: 'https://fakestoreapi.com',
+};

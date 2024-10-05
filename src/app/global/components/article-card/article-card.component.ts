@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ArticleCard } from '@global/models/article-card.interface';
+import { ArticleCard } from '@global/interfaces/article-card.interface';
 import { SafePipe } from 'safe-pipe';
 
 @Component({

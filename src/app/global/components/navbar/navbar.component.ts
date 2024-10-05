@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { NotificationsComponent } from '../notifications/notifications.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { NavRoutes } from '@global/models/navRoutes.interface';
 import { NavElement } from '@global/enums/navElement';
 import { NgClass } from '@angular/common';
+import { NavRoutes } from '@global/interfaces/navRoutes.interface';
 
 @Component({
   selector: 'app-navbar',

@@ -1,6 +1,6 @@
 import { SafePipe } from 'safe-pipe';
-import { ValueCard } from './../../models/valueCard.interface';
 import { Component } from '@angular/core';
+import { ValueCard } from '@global/interfaces/valueCard.interface';
 
 @Component({
   selector: 'app-values',

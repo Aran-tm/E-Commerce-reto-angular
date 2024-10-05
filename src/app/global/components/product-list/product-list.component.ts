@@ -1,23 +1,24 @@
-import { Component, inject } from '@angular/core';
-import { ProductCard } from '@global/models/product-card.interface';
-import { ProductCardComponent } from '../product-card/product-card.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ExtraProductDetails } from '@global/models/extraProductDetails.interface';
+import { Component, inject, OnInit } from '@angular/core';
+import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductState } from '@global/enums/productStates';
 import { ProductDiscount } from '@global/enums/productDiscount';
+import { ProductsService } from '@global/services/products.service';
+import { ExtraProductDetails } from '@global/interfaces/extraProductDetails.interface';
+import { ProductCard } from '@global/interfaces/product-card.interface';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductCardComponent, HttpClientModule],
+  imports: [ProductCardComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
 })
-export class ProductListComponent {
-  http = inject(HttpClient);
-  URL_PRODUCTS = `${environment.domain}/products`;
-  listProduct: ProductCard[] = [];
+export class ProductListComponent implements OnInit {
+  public errorMessage!: string;
+  listProduct?: ProductCard[] = [];
+  private productService = inject(ProductsService);
+
   exProdDetails: ExtraProductDetails[] = [
     {
       state: ProductState.NEW,
@@ -26,16 +27,10 @@ export class ProductListComponent {
   ];
 
   ngOnInit() {
-    console.log(`URL Products: `, this.URL_PRODUCTS);
+    console.log(`URL Products: `, environment.apiUrlBase);
 
-    this.http.get<any>(this.URL_PRODUCTS).subscribe({
-      next: (data) => {
-        this.listProduct = data;
-        console.log('Datos recibidos:', data);
-      },
-      error: (error) => {
-        console.error('Error en la solicitud:', error);
-      },
+    this.productService.getProductList().subscribe((res) => {
+      this.listProduct = res;
     });
   }
 }

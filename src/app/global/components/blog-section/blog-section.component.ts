@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SectionsTitleComponent } from '../sections-title/sections-title.component';
-import { ArticleCard } from '@global/models/article-card.interface';
 import { ArticleCardComponent } from '../article-card/article-card.component';
+import { ArticleCard } from '@global/interfaces/article-card.interface';
 
 @Component({
   selector: 'app-blog-section',

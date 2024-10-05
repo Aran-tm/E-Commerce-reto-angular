@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NavElement } from '@global/enums/navElement';
-import { NavRoutes } from '@global/models/navRoutes.interface';
+import { NavRoutes } from '@global/interfaces/navRoutes.interface';
 
 @Injectable({
   providedIn: 'root',

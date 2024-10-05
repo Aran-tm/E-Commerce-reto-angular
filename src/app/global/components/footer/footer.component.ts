@@ -1,6 +1,6 @@
 import { NavbarService } from '@global/services/navbar.service';
-import { NavRoutes } from './../../models/navRoutes.interface';
 import { Component, inject } from '@angular/core';
+import { NavRoutes } from '@global/interfaces/navRoutes.interface';
 
 @Component({
   selector: 'app-footer',

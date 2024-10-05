@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ExtraProductDetails } from '@global/models/extraProductDetails.interface';
-import { ProductCard } from '@global/models/product-card.interface';
+import { ExtraProductDetails } from '@global/interfaces/extraProductDetails.interface';
+import { ProductCard } from '@global/interfaces/product-card.interface';
 import { LongDescriptionPipe } from '@global/pipes/long-description.pipe';
 import { ShortDescriptionPipe } from '@global/pipes/short-description.pipe';
 import { SafePipe } from 'safe-pipe';
