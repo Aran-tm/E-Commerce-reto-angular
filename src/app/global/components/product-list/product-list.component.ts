@@ -32,6 +32,8 @@ export class ProductListComponent implements OnInit {
     this.productService.getProductList().subscribe((res) => {
       this.listProduct = res;
       this.errorMessage = this.productService.errorMessage;
+      console.log(`Product List: `, this.listProduct);
+      console.log(`This Error Message: `, this.errorMessage);
     });
   }
 }
