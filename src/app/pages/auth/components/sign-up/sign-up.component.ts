@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
-  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -22,11 +22,20 @@ export class SignUpComponent {
 
   // always will be a value inside inputs
   formGroup: FormGroup = this.formBuilder.nonNullable.group({
-    name: ['', Validators.required],
-    username: ['', Validators.required],
+    name: [
+      '',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(25)],
+    ],
+    username: [
+      '',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(25)],
+    ],
     gmail: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
-    checkbox: [false, Validators.required],
+    password: [
+      '',
+      [Validators.required, Validators.minLength(6), Validators.maxLength(25)],
+    ],
+    checkbox: [false],
   });
 
   // reactive form group
@@ -41,6 +50,10 @@ export class SignUpComponent {
 
   ngOnInit() {
     console.log(`Formulario es: `, this.formGroup.valid);
+
+    const nameLength = this.formGroup.controls['gmail'];
+    console.log(`Name Length: `, nameLength);
+    console.log(`Form Group`, this.formGroup);
   }
 
   onSubmit() {
