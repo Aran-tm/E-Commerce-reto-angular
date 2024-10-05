@@ -1,3 +1,28 @@
-<div class="error-card">
-  <p>{{ errorMessage() }}</p>
+<div
+  class="hidden mx-40 sm:p-4 sm:flex sm:flex-row sm:justify-between sm:h-[6.5rem] sm:gap-4 sm:rounded-lg sm:shadow-sm sm:shadow-red-300 sm:border-[0.063rem] sm:border-red-300 sm:bg-[#FFFBFA]"
+>
+  <div class="flex sm:gap-4">
+    <svg
+      class="mt-[0.3rem]"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.375 8.375L8.40957 8.35771C8.88717 8.11891 9.42493 8.55029 9.29542 9.06831L8.70458 11.4317C8.57507 11.9497 9.11283 12.3811 9.59043 12.1423L9.625 12.125M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9ZM9 5.875H9.00625V5.88125H9V5.875Z"
+        stroke="#CD3636"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    <div class="flex flex-col gap-2">
+      <span class="text-red-600 text-xl font-semibold">{{
+        errorMessage()
+      }}</span>
+    </div>
+  </div>
 </div>

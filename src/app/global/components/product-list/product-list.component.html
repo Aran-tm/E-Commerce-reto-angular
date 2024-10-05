@@ -6,3 +6,8 @@
   <app-product-card [card]="prod" [exProdDetails]="exProdDetails" />
   }
 </div>
+
+<!-- Show error component it here is an error -->
+@if (haveError()) {
+<app-error-message [errorMessage]="errorMessage" />
+}

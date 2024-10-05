@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 @Component({
   selector: 'app-error-message',
@@ -8,4 +8,8 @@ import { Component, input } from '@angular/core';
 })
 export class ErrorMessageComponent {
   errorMessage = input<string>();
+
+  closeErrorMessage() {
+    
+  }
 }
