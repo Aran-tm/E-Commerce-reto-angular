@@ -15,7 +15,7 @@ import { ProductCard } from '@global/interfaces/product-card.interface';
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent implements OnInit {
-  public errorMessage!: string;
+  public errorMessage: string = '';
   listProduct?: ProductCard[] = [];
   private productService = inject(ProductsService);
 
@@ -31,6 +31,7 @@ export class ProductListComponent implements OnInit {
 
     this.productService.getProductList().subscribe((res) => {
       this.listProduct = res;
+      this.errorMessage = this.productService.errorMessage;
     });
   }
 }

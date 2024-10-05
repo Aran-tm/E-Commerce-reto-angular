@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { catchError, EMPTY } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,8 +8,14 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductsService {
   http = inject(HttpClient);
+  errorMessage: string = '';
 
   getProductList() {
-    return this.http.get<any>(`${environment.apiUrlBase}/wacangaproducts`);
+    return this.http.get<any>(`${environment.apiUrlBase}/wacangaproducts`).pipe(
+      catchError((error: string) => {
+        this.errorMessage = error;
+        return EMPTY;
+      })
+    );
   }
 }
