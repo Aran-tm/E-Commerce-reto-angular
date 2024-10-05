@@ -22,11 +22,11 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
         errorMessage = `Error code: ${error.status}, message: ${error.message}`;
 
         if (error.status === 404) {
-          console.error('Error 404: Recurso no encontrado');
+          console.error('Error 404: Resource not found');
         } else if (error.status === 500) {
-          console.error('Error 500: Error interno del servidor');
+          console.error('Error 500: Internal Server Error');
         } else if (error.status === 0) {
-          console.error('Error 0 UNKNOWN');
+          console.error('Error 0: Unknown');
         }
       }
 
