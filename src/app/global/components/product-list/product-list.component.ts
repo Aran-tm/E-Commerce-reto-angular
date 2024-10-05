@@ -32,10 +32,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     console.log(`URL Products: `, environment.apiUrlBase);
 
-    this.productService.getProductList().subscribe((res) => {
-      this.listProduct = res;
-    });
-
     this.productService
       .getProductList()
       .pipe(

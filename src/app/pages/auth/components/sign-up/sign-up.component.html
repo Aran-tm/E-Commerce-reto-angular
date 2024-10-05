@@ -8,7 +8,11 @@
   </div>
 
   <div class="w-[19.438rem] max-w-[19.438rem] m-auto py-8 flex flex-col gap-8">
-    <form class="flex flex-col gap-6">
+    <form
+      class="flex flex-col gap-6"
+      ngForm
+      [formGroup]="formGroup"
+    >
       <div class="flex flex-col gap-6">
         <span class="text-3xl font-semibold text-color-primary">Sign Up</span>
         <span class="text-color-neutralFour text-base"
@@ -21,82 +25,92 @@
         >
       </div>
 
-      <div class="flex flex-col gap-6">
-        <input
-          placeholder="Your name"
-          class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
-        />
-        <input
-          placeholder="Username"
-          class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
-        />
-        <input
-          placeholder="Email address"
-          class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
-        />
+      <input
+        formControlName="name"
+        placeholder="Your name"
+        class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
+      />
+      <input
+        formControlName="username"
+        placeholder="Username"
+        class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
+      />
+      <input
+        formControlName="gmail"
+        placeholder="Email address"
+        class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
+      />
 
-        <div class="relative flex flex-row justify-between items-center">
-          <input
-            placeholder="Password"
-            class="border outline-color-blue w-full rounded-sm py-2.5 indent-2 border-b-color-neutralFour placeholder-color-neutralFour"
-          />
-          <div
-            class="absolute pl-[17.5rem] flex items-center pointer-events-none"
+      <div class="relative flex flex-row justify-between items-center">
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          class="border outline-color-blue w-full rounded-sm py-2.5 indent-2 border-b-color-neutralFour placeholder-color-neutralFour"
+        />
+        <div
+          class="absolute pl-[17.5rem] flex items-center pointer-events-none"
+        >
+          <svg
+            class=""
+            width="22"
+            height="16"
+            viewBox="0 0 22 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              class=""
-              width="22"
-              height="16"
-              viewBox="0 0 22 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.1303 5.8531C21.2899 7.07317 21.2899 8.92683 20.1303 10.1469C18.1745 12.2047 14.8155 15 11 15C7.18448 15 3.82549 12.2047 1.86971 10.1469C0.710098 8.92683 0.710098 7.07317 1.86971 5.8531C3.82549 3.79533 7.18448 1 11 1C14.8155 1 18.1745 3.79533 20.1303 5.8531Z"
-                stroke="#6C7275"
-                stroke-width="1.5"
-              />
-              <path
-                d="M14 8C14 9.65685 12.6569 11 11 11C9.34315 11 8 9.65685 8 8C8 6.34315 9.34315 5 11 5C12.6569 5 14 6.34315 14 8Z"
-                stroke="#6C7275"
-                stroke-width="1.5"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div class="flex justify-between">
-          <div class="flex gap-2 items-center">
-            <input
-              class="h-5 w-5 flex rounded-md"
-              type="checkbox"
-              name=""
-              id=""
+            <path
+              d="M20.1303 5.8531C21.2899 7.07317 21.2899 8.92683 20.1303 10.1469C18.1745 12.2047 14.8155 15 11 15C7.18448 15 3.82549 12.2047 1.86971 10.1469C0.710098 8.92683 0.710098 7.07317 1.86971 5.8531C3.82549 3.79533 7.18448 1 11 1C14.8155 1 18.1745 3.79533 20.1303 5.8531Z"
+              stroke="#6C7275"
+              stroke-width="1.5"
             />
-            <span class="text-color-neutralFour text-sm font-normal"
-              >I agree with
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                class="text-color-primary font-bold"
-                >Privacy Policy</a
-              >
-              and
-              <a
-                href="https://policies.google.com/terms"
-                target="_blank"
-                class="text-color-primary font-bold"
-                >Terms of Use</a
-              ></span
+            <path
+              d="M14 8C14 9.65685 12.6569 11 11 11C9.34315 11 8 9.65685 8 8C8 6.34315 9.34315 5 11 5C12.6569 5 14 6.34315 14 8Z"
+              stroke="#6C7275"
+              stroke-width="1.5"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <div class="flex gap-2 items-center">
+          <input
+            formControlName="checkbox"
+            class="h-5 w-5 flex rounded-md"
+            type="checkbox"
+            name=""
+            id=""
+          />
+          <span class="text-color-neutralFour text-sm font-normal"
+            >I agree with
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              class="text-color-primary font-bold"
+              >Privacy Policy</a
             >
-          </div>
+            and
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              class="text-color-primary font-bold"
+              >Terms of Use</a
+            ></span
+          >
         </div>
       </div>
 
       <button
+        [disabled]="formGroup.invalid"
+        type="submit"
+        (click)="onSubmit()"
         [routerLink]="['/sign-in']"
-        class="bg-color-primary hover:bg-color-neutralOne text-white rounded-lg flex justify-center items-center py-2.5 px-10"
-        type="button"
+        [ngClass]="
+          formGroup.valid
+            ? 'bg-color-primary hover:bg-color-neutralOne text-white rounded-lg flex justify-center items-center py-2.5 px-10'
+            : 'bg-color-neutralFive text-color-primary font-semibold rounded-lg flex justify-center items-center py-2.5 px-10'
+        "
       >
         Sign Up
       </button>
