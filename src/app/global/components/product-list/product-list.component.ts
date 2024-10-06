@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductState } from '@global/enums/productStates';
 import { ProductDiscount } from '@global/enums/productDiscount';
@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit {
   errorMessage: string = '';
   listProduct?: ProductCard[] = [];
   private productService = inject(ProductsService);
+  searchbarText = input<string>();
 
   exProdDetails: ExtraProductDetails[] = [
     {

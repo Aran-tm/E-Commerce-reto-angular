@@ -15,8 +15,11 @@
   <!-- New Arrivals -->
   <app-new-arrivals />
 
+  <!-- Input Search -->
+  <app-searchbar (searchbarInputText)="searchbarInputText($event)" />
+
   <!-- Product List -->
-  <app-product-list />
+  <app-product-list [searchbarText]="searchbarText" />
 
   <!-- Values Cards -->
   <app-values />
