@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NotificationsComponent } from '../notifications/notifications.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NavElement } from '@global/enums/navElement';
@@ -13,7 +13,7 @@ import { NavRoutes } from '@global/interfaces/navRoutes.interface';
   styles: ``,
 })
 export class NavbarComponent {
-  showMenu: boolean = false;
+  showMenu = signal(false);
   currentURL: string = '';
   actRoute = inject(ActivatedRoute);
   route = inject(Router);
@@ -42,7 +42,7 @@ export class NavbarComponent {
   ];
 
   openMenu() {
-    this.showMenu = !this.showMenu;
+    this.showMenu.set(!this.showMenu)
     console.log(`Showing Menu`, this.showMenu);
   }
 

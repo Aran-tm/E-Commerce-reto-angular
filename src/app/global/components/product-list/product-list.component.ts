@@ -3,7 +3,7 @@ import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductState } from '@global/enums/productStates';
 import { ProductDiscount } from '@global/enums/productDiscount';
-import { ProductsService } from '@global/services/products.service';
+import { ProductsService } from 'src/app/core/services/products.service';
 import { ExtraProductDetails } from '@global/interfaces/extraProductDetails.interface';
 import { ProductCard } from '@global/interfaces/product-card.interface';
 import { ErrorMessageComponent } from '../error-message/error-message.component';

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthLayoutComponent } from '@global/components/layouts/auth-layout-component/auth-layout.component';
+import { authGuard } from 'src/app/core/guards/auth.guard';
 import { HomeComponent } from '@pages/home/components/home/home.component';
 import { NotFoundComponent } from '@pages/others/components/not-found/not-found.component';
 
@@ -28,6 +29,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        canActivateChild: [authGuard],
         loadChildren: () =>
           import('@pages/home/homeRoutes.routes').then(
             (homeRoutes) => homeRoutes.homeRoutes

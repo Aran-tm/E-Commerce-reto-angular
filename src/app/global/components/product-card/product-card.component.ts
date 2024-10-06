@@ -3,8 +3,8 @@ import { Component, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ExtraProductDetails } from '@global/interfaces/extraProductDetails.interface';
 import { ProductCard } from '@global/interfaces/product-card.interface';
-import { LongDescriptionPipe } from '@global/pipes/long-description.pipe';
-import { ShortDescriptionPipe } from '@global/pipes/short-description.pipe';
+import { LongDescriptionPipe } from 'src/app/core/pipes/long-description.pipe';
+import { ShortDescriptionPipe } from 'src/app/core/pipes/short-description.pipe';
 import { SafePipe } from 'safe-pipe';
 
 @Component({

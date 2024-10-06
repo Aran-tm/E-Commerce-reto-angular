@@ -1,4 +1,4 @@
-import { NavbarService } from '@global/services/navbar.service';
+import { NavbarService } from 'src/app/core/services/navbar.service';
 import { Component, inject } from '@angular/core';
 import { NavRoutes } from '@global/interfaces/navRoutes.interface';
 

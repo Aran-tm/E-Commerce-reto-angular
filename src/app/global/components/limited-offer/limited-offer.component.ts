@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MessageDirective } from '@global/directives/message.directive';
+import { MessageDirective } from 'src/app/core/directives/message.directive';
 
 @Component({
   selector: 'app-limited-offer',
