@@ -42,7 +42,7 @@ export class NavbarComponent {
   ];
 
   openMenu() {
-    this.showMenu.set(!this.showMenu)
+    this.showMenu.update(() => !this.showMenu);
     console.log(`Showing Menu`, this.showMenu);
   }
 

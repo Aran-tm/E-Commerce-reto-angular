@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
       .pipe(
         catchError((error: any) => {
           // showing message error to user
-          this.haveError.set(true);
+          this.haveError.update(() => true);
           this.errorMessage = error;
 
           // returning error for others uses

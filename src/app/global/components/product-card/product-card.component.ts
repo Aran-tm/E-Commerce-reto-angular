@@ -93,7 +93,7 @@ export class ProductCardComponent {
   card = input<ProductCard>();
 
   addedToWishList() {
-    this.itemAdded.set(!this.itemAdded());
+    this.itemAdded.update(() => !this.itemAdded());
     console.log(`Item adedd State: `, this.itemAdded());
   }
 }

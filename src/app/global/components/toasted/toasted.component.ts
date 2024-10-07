@@ -11,6 +11,6 @@ export class ToastedComponent {
   errorMessage: string = 'Invalid User Data';
 
   showMessageError() {
-    this.isVisible.set(true);
+    this.isVisible.update(() => true);
   }
 }
