@@ -12,10 +12,9 @@ export const authGuard: CanActivateFn = async (route, state) => {
     authService.data.userData === UserData.NAME &&
     authService.data.password === UserData.PASSWORD
   ) {
-    router.navigateByUrl('/home');
     return true;
   } else {
-    router.navigateByUrl('/sign-in');
+    router.navigate(['/sign-in']);
     return false;
   }
 };
