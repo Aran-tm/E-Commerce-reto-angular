@@ -10,7 +10,7 @@
   <div
     class="w-[19.438rem] max-w-[19.438rem] h-[28.438rem] max-h-[28.438rem] m-auto py-8 flex flex-col gap-8"
   >
-    <form class="flex flex-col gap-6">
+    <form class="flex flex-col gap-6" [formGroup]="signInForm">
       <span class="text-3xl font-semibold text-color-primary">Sign In</span>
       <span class="text-color-neutralFour text-base"
         >Don’t have an accout yet?
@@ -21,6 +21,7 @@
         ></span
       >
       <input
+        formControlName="userData"
         type="text"
         placeholder="Your username or email address"
         class="border rounded-sm py-2.5 indent-2 outline-color-blue border-b-color-neutralFour placeholder-color-neutralFour"
@@ -28,6 +29,7 @@
 
       <div class="relative flex flex-row justify-between items-center">
         <input
+          formControlName="password"
           type="password"
           placeholder="Password"
           class="border outline-color-blue w-full rounded-sm py-2.5 indent-2 border-b-color-neutralFour placeholder-color-neutralFour"
@@ -60,6 +62,7 @@
       <div class="flex justify-between">
         <div class="flex gap-2 items-center">
           <input
+            formControlName="checkbox"
             class="h-5 w-5 flex rounded-md"
             type="checkbox"
             name=""
@@ -77,6 +80,7 @@
       </div>
 
       <button
+        (click)="onSubmit()"
         [routerLink]="['/home']"
         class="bg-color-primary hover:bg-color-neutralOne text-white rounded-lg flex justify-center items-center py-2.5 px-10"
         type="button"

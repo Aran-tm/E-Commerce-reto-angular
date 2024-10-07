@@ -23,7 +23,8 @@
     "paths": {
       "@pages/*": ["src/app/pages/*"],
       "@assets/*": ["src/app/assets/*"],
-      "@global/*": ["src/app/global/*"]
+      "@global/*": ["src/app/global/*"],
+      "@core/*": ["src/app/core/*"]
     }
   },
   "angularCompilerOptions": {
