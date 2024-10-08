@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     // providers for toasted
     provideAnimations(),
-    provideToastr({ timeOut: 2500, preventDuplicates: true }),
+    provideToastr({ timeOut: 3500, preventDuplicates: true }),
 
     // providres for routers
     provideRouter(routes),

@@ -33,7 +33,7 @@ export const AppStore = signalStore(
     signIn() {
       patchState(store, () => ({ userIsLogged: true }));
       // toast message for user login
-      toastSvc.success('User logged', '3legant. Shop');
+      toastSvc.success('User Authenticated Successfully', '3legant. Shop');
     },
     // add to cart function
     addToCart() {
