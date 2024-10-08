@@ -1,4 +1,4 @@
-import { computed } from '@angular/core';
+import { computed, inject } from '@angular/core';
 import {
   patchState,
   signalStore,
@@ -6,6 +6,7 @@ import {
   withMethods,
   withState,
 } from '@ngrx/signals';
+import { ToastrService } from 'ngx-toastr';
 
 // global app interface
 interface AppState {
@@ -27,10 +28,12 @@ export const AppStore = signalStore(
     isLogged: computed(() => store.userIsLogged),
     quantity: computed(() => store.productsCount),
   })),
-  withMethods((store) => ({
+  withMethods((store, toastSvc = inject(ToastrService)) => ({
     // sign in function
     signIn() {
       patchState(store, () => ({ userIsLogged: true }));
+      // toast message for user login
+      toastSvc.success('User logged', '3legant. Shop');
     },
     // add to cart function
     addToCart() {
