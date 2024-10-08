@@ -22,6 +22,8 @@ export class ProductListComponent implements OnInit {
   listProduct?: ProductCard[] = [];
   private productService = inject(ProductsService);
   searchbarText = input<string>();
+  productsID: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // just for get 10 products
+  result: string = '';
 
   exProdDetails: ExtraProductDetails[] = [
     {
@@ -53,5 +55,17 @@ export class ProductListComponent implements OnInit {
           console.error('Subscribe error:', err);
         },
       });
+
+    this.productService.mergeMapMethod(this.productsID).subscribe(
+      (result) => {
+        this.result = JSON.stringify(result);
+        console.log(`Merge Map`, this.result);
+      },
+      (error) => {
+        console.error('Error:', error);
+        this.result = 'Error occurred';
+        console.log(`Error Result`, this.result);
+      }
+    );
   }
 }
