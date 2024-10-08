@@ -34,8 +34,12 @@
         alt="{{ card()?.title | shortDescription }}"
       />
 
-      <div class="absolute bottom-0 right-0 left-0 flex flex-col p-7">
+      <div
+        class="absolute bottom-0 right-0 left-0 flex flex-col p-7"
+        (click)="store.addToCart()"
+      >
         <button
+          (click)="store.addToCart()"
           class="bg-color-primary rounded-lg py-2 px-6 gap-2 text-white hover:bg-color-neutralThree"
         >
           Add to Cart

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { AppStore } from '@core/store/app.store';
 
 @Component({
   selector: 'app-shop-notifications',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
   templateUrl: './notifications.component.html',
   styles: ``,
 })
-export class NotificationsComponent {
-  numberOfNotifications: number = 2;
+export class NotificationsComponent implements OnInit {
+  private readonly store = inject(AppStore);
+  numberOfNotifications = this.store.productsCount();
+
+  ngOnInit() {
+    console.log(`Quantity of products: `, this.numberOfNotifications);
+  }
 }

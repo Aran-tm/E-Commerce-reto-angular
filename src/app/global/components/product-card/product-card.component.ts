@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ExtraProductDetails } from '@global/interfaces/extraProductDetails.interface';
 import { ProductCard } from '@global/interfaces/product-card.interface';
 import { LongDescriptionPipe } from 'src/app/core/pipes/long-description.pipe';
 import { ShortDescriptionPipe } from 'src/app/core/pipes/short-description.pipe';
 import { SafePipe } from 'safe-pipe';
+import { AppStore } from '@core/store/app.store';
 
 @Component({
   selector: 'app-product-card',
@@ -21,6 +22,7 @@ import { SafePipe } from 'safe-pipe';
   styles: ``,
 })
 export class ProductCardComponent {
+  store = inject(AppStore);
   itemAdded = signal<boolean>(false);
   exProdDetails = input.required<ExtraProductDetails[]>();
   heartItem = `<svg

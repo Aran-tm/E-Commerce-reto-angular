@@ -1,5 +1,4 @@
 import { computed } from '@angular/core';
-import { ProductCard } from '@global/interfaces/product-card.interface';
 import {
   patchState,
   signalStore,
@@ -11,39 +10,32 @@ import {
 // global app interface
 interface AppState {
   userIsLogged: boolean;
-  hideLimiterOffer: boolean;
-  quantityOfProducts: number;
-  products: ProductCard[];
+  productsCount: number;
 }
 
 // initial state for app
 const initialState: AppState = {
   userIsLogged: false,
-  hideLimiterOffer: false,
-  quantityOfProducts: 0,
-  products: [],
+  productsCount: 0,
 };
 
 // app store
 export const AppStore = signalStore(
   { providedIn: 'root' }, // provide in root application
   withState(initialState), // initial state
-  // computed signals
-  withComputed((state) => ({
-    isLogged: computed(() => state.userIsLogged()),
-    hideLimiterOffer: computed(() => state.hideLimiterOffer()),
-    quantityOfProducts: computed(() => state.quantityOfProducts()),
-    products: computed(() => state.products()),
+  withComputed((store) => ({
+    isLogged: computed(() => store.userIsLogged),
+    quantity: computed(() => store.productsCount),
   })),
   withMethods((store) => ({
-    isUserLogged(): void {
+    // sign in function
+    signIn() {
       patchState(store, () => ({ userIsLogged: true }));
     },
-    hiddenLimitedOffer(): void {
-      patchState(store, () => ({ userIsLogged: true }));
-    },
-    quantityOfProducts(): void {
-      patchState(store, () => ({ userIsLogged: false }));
+    // add to cart function
+    addToCart() {
+      let quantity = store.productsCount();
+      patchState(store, () => ({ productsCount: quantity + 1 }));
     },
   }))
 );

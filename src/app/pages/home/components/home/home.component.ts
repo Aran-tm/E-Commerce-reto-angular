@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LimitedOfferComponent } from '@global/components/limited-offer/limited-offer.component';
 import { NavbarComponent } from '@global/components/navbar/navbar.component';
 import { CarrouselComponent } from '@global/components/carrousel/carrousel.component';
@@ -12,6 +12,7 @@ import { NewArrivalsComponent } from '@global/components/new-arrivals/new-arriva
 import { NewsletterComponent } from '@global/components/newsletter/newsletter.component';
 import { FooterComponent } from '@global/components/footer/footer.component';
 import { SearchbarComponent } from '@global/components/searchbar/searchbar.component';
+import { AppStore } from '@core/store/app.store';
 
 @Component({
   selector: 'app-home',
@@ -35,9 +36,14 @@ import { SearchbarComponent } from '@global/components/searchbar/searchbar.compo
 })
 export class HomeComponent {
   searchbarText: string = '';
+  store = inject(AppStore);
 
   searchbarInputText(searchbarString: string) {
     this.searchbarText = searchbarString;
     console.log(`Obtaining searchbar text: `, this.searchbarText);
+  }
+
+  ngOnInit() {
+    console.log(`Is User Logged`, this.store.userIsLogged());
   }
 }
