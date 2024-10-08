@@ -39,6 +39,7 @@ export const AppStore = signalStore(
     addToCart() {
       let quantity = store.productsCount();
       patchState(store, () => ({ productsCount: quantity + 1 }));
+      toastSvc.success('Product Added to Cart', '3legant. Shop');
     },
   }))
 );

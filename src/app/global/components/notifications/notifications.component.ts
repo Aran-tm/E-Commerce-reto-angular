@@ -9,10 +9,9 @@ import { AppStore } from '@core/store/app.store';
   styles: ``,
 })
 export class NotificationsComponent implements OnInit {
-  private readonly store = inject(AppStore);
-  numberOfNotifications = this.store.productsCount();
+  store = inject(AppStore);
 
   ngOnInit() {
-    console.log(`Quantity of products: `, this.numberOfNotifications);
+    console.log(`Quantity of products: `, this.store.productsCount());
   }
 }
