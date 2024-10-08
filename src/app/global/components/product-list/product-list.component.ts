@@ -55,11 +55,13 @@ export class ProductListComponent implements OnInit {
           console.error('Subscribe error:', err);
         },
       });
+  }
 
+  showTenProducts() {
     this.productService.mergeMapMethod(this.productsID).subscribe(
       (result) => {
-        this.result = JSON.stringify(result);
-        console.log(`Merge Map`, this.result);
+        this.listProduct = result
+        console.log(`Merge Map`, this.listProduct);
       },
       (error) => {
         console.error('Error:', error);

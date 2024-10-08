@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { ProductCard } from '@global/interfaces/product-card.interface';
 import { from, mergeMap, Observable, toArray } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -15,10 +16,10 @@ export class ProductsService {
     return this.http.get<any>(`${environment.apiUrlBase}/products`);
   }
 
-  mergeMapMethod(ids: number[]): Observable<number[]> {
+  mergeMapMethod(ids: number[]): Observable<ProductCard[]> {
     return from(ids).pipe(
       mergeMap((id) =>
-        this.http.get<number>(`${environment.apiUrlBase}/products/${id}`)
+        this.http.get<ProductCard>(`${environment.apiUrlBase}/products/${id}`)
       ),
       toArray()
     );

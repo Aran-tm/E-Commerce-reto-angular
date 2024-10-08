@@ -11,3 +11,12 @@
 @if (haveError()) {
 <app-error-message [errorMessage]="errorMessage" />
 }
+
+<div class="w-full flex gap-6 max-w-[64.375rem] mx-40 mt-8">
+  <button
+    class="text-white bg-color-red hover:bg-orange-500 rounded-lg shadow-md p-2.5"
+    (click)="showTenProducts()"
+  >
+    Show Only 10 Products
+  </button>
+</div>
