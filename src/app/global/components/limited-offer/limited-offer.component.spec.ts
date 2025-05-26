@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { LimitedOfferComponent } from './limited-offer.component';
 
@@ -8,10 +9,9 @@ describe('LimitedOfferComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LimitedOfferComponent]
-    })
-    .compileComponents();
-    
+      imports: [LimitedOfferComponent, RouterTestingModule],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LimitedOfferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
